@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08111f">
+
+<title>Teacher's Day Memories</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:#050b14;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(91,125,255,.18),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(255,180,70,.12),transparent 30%),
+        #050b14;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    opacity:.18;
+    background-image:
+        radial-gradient(#fff 1px,transparent 1px);
+    background-size:45px 45px;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.nav{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    width:calc(100% - 28px);
+    max-width:1100px;
+    padding:12px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;
+    background:rgba(8,17,31,.72);
+    backdrop-filter:blur(18px);
+}
+
+.logo{
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:#ffd166;
+}
+
+.nav button{
+    border:0;
+    background:rgba(255,255,255,.08);
+    color:white;
+    padding:9px 13px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100svh;
+    padding:120px 20px 50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.07);
+    border-radius:999px;
+    color:#ffd166;
+    margin-bottom:22px;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:clamp(45px,12vw,105px);
+    line-height:.95;
+    letter-spacing:-4px;
+    margin-bottom:25px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#fff,#ffd166,#ff9f43);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:620px;
+    margin:auto;
+    color:#b7c1d1;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:0;
+    padding:14px 21px;
+    border-radius:15px;
+    color:#06101e;
+    background:#ffd166;
+    font-weight:800;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.btn.secondary{
+    background:rgba(255,255,255,.08);
+    color:white;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.scroll{
+    position:absolute;
+    bottom:25px;
+    font-size:12px;
+    color:#738097;
+}
+
+
+/* ================= SECTIONS ================= */
+
+section{
+    width:min(1100px,calc(100% - 30px));
+    margin:0 auto;
+    padding:85px 0;
+}
+
+.section-title{
+    margin-bottom:30px;
+}
+
+.section-title small{
+    color:#ffd166;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    font-size:clamp(30px,7vw,55px);
+    margin-top:7px;
+}
+
+.section-title p{
+    color:#8491a5;
+    margin-top:8px;
+}
+
+
+/* ================= FEATURE ================= */
+
+.feature{
+    min-height:400px;
+    border-radius:30px;
+    overflow:hidden;
+    position:relative;
+    background:
+        linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.15)),
+        url("images/featured.jpg") center/cover;
+    display:flex;
+    align-items:flex-end;
+    padding:30px;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.feature-content{
+    max-width:600px;
+}
+
+.feature h3{
+    font-size:clamp(28px,6vw,50px);
+}
+
+.feature p{
+    color:#d4d9e0;
+    margin-top:8px;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    columns:2 160px;
+    column-gap:12px;
+}
+
+.photo{
+    width:100%;
+    margin-bottom:12px;
+    break-inside:avoid;
+    border-radius:18px;
+    overflow:hidden;
+    cursor:pointer;
+    position:relative;
+    background:#101927;
+}
+
+.photo img{
+    width:100%;
+    display:block;
+    transition:.4s;
+}
+
+.photo:hover img{
+    transform:scale(1.05);
+}
+
+.photo::after{
+    content:"VIEW";
+    position:absolute;
+    inset:auto 10px 10px auto;
+    background:rgba(0,0,0,.65);
+    padding:6px 9px;
+    border-radius:8px;
+    font-size:10px;
+    opacity:0;
+    transition:.3s;
+}
+
+.photo:hover::after{
+    opacity:1;
+}
+
+
+/* ================= VIDEO ================= */
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:15px;
+}
+
+.video-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    padding:10px;
+    border-radius:22px;
+    overflow:hidden;
+}
+
+/* YouTube player */
+
+.youtube-player{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:15px;
+    background:#000;
+}
+
+.youtube-player iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+.video-card h3{
+    padding:12px 5px 4px;
+    font-size:16px;
+}
+
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+    position:relative;
+    margin-top:30px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:14px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:linear-gradient(#ffd166,transparent);
+}
+
+.event{
+    position:relative;
+    padding-left:45px;
+    margin-bottom:35px;
+}
+
+.event::before{
+    content:"";
+    position:absolute;
+    left:7px;
+    top:4px;
+    width:16px;
+    height:16px;
+    background:#ffd166;
+    border-radius:50%;
+    box-shadow:0 0 20px #ffd166;
+}
+
+.event h3{
+    font-size:20px;
+}
+
+.event p{
+    color:#8793a7;
+    margin-top:5px;
+}
+
+
+/* ================= MESSAGES ================= */
+
+.message-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.message{
+    padding:22px;
+    min-height:150px;
+    border-radius:22px;
+    background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.message p{
+    color:#d8deea;
+    line-height:1.6;
+}
+
+.message span{
+    display:block;
+    color:#ffd166;
+    margin-top:15px;
+    font-size:13px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:60px 20px;
+    text-align:center;
+    color:#758196;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+footer strong{
+    color:#ffd166;
+}
+
+
+/* ================= LIGHTBOX ================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    backdrop-filter:blur(12px);
+    z-index:5000;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:100%;
+    max-height:90vh;
+    border-radius:15px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:45px;
+    height:45px;
+    border:0;
+    border-radius:50%;
+    background:white;
+    color:black;
+    font-size:24px;
+    cursor:pointer;
+}
+
+
+/* ================= REVEAL ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .nav{
+        top:8px;
+        width:calc(100% - 16px);
+    }
+
+    .hero{
+        padding-top:110px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    section{
+        padding:65px 0;
+    }
+
+    .feature{
+        min-height:350px;
+        padding:22px;
+    }
+
+    .video-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(min-width:800px){
+}
+
+
+/* ================= UNIQUE MEMORY GALLERY ================= */
+
+.memory-gallery{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.memory-stage{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/10;
+    min-height:280px;
+    overflow:hidden;
+    border-radius:30px;
+    background:#080f1a;
+    border:1px solid rgba(255,255,255,.13);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.38),
+        inset 0 0 0 1px rgba(255,255,255,.025);
+    isolation:isolate;
+    touch-action:pan-y;
+}
+
+.memory-stage::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:2;
+    pointer-events:none;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3,8,16,.45) 0%,
+            transparent 30%,
+            transparent 55%,
+            rgba(3,8,16,.78) 100%
+        );
+}
+
+.memory-stage::after{
+    content:"";
+    position:absolute;
+    inset:10px;
+    z-index:4;
+    pointer-events:none;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:23px;
+}
+
+.memory-glow{
+    position:absolute;
+    inset:-20%;
+    z-index:0;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,209,102,.18),
+            transparent 38%
+        );
+    filter:blur(35px);
+}
+
+.memory-stage img{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    cursor:zoom-in;
+    transition:
+        opacity .28s ease,
+        transform .55s cubic-bezier(.2,.8,.2,1);
+}
+
+.memory-stage img.changing{
+    opacity:.08;
+    transform:scale(1.045);
+}
+
+.memory-top{
+    position:absolute;
+    top:18px;
+    left:18px;
+    right:18px;
+    z-index:5;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    pointer-events:none;
+}
+
+.memory-top span{
+    padding:7px 10px;
+    border-radius:999px;
+    background:rgba(4,9,17,.65);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    color:#ffd166;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.memory-top b{
+    padding:7px 10px;
+    border-radius:999px;
+    background:rgba(4,9,17,.65);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    font-size:11px;
+}
+
+.memory-arrow{
+    position:absolute;
+    top:50%;
+    z-index:6;
+    transform:translateY(-50%);
+    width:48px;
+    height:48px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:50%;
+    background:rgba(4,9,17,.64);
+    backdrop-filter:blur(12px);
+    color:#fff;
+    font-size:30px;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.25s ease;
+}
+
+.memory-arrow:hover{
+    background:#ffd166;
+    color:#08111f;
+    transform:translateY(-50%) scale(1.08);
+}
+
+.memory-arrow.left{left:16px;}
+.memory-arrow.right{right:16px;}
+
+.memory-caption{
+    position:absolute;
+    left:22px;
+    bottom:20px;
+    z-index:5;
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    pointer-events:none;
+}
+
+.memory-caption small{
+    color:#ffd166;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.memory-caption strong{
+    font-size:clamp(18px,4vw,26px);
+}
+
+.memory-progress{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    padding:15px 4px 10px;
+}
+
+.memory-progress span{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:rgba(255,255,255,.22);
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.memory-progress span.active{
+    width:25px;
+    border-radius:999px;
+    background:#ffd166;
+}
+
+.memory-strip{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding:2px 2px 7px;
+    scroll-behavior:smooth;
+}
+
+.memory-strip::-webkit-scrollbar{
+    display:none;
+}
+
+.memory-thumb{
+    flex:0 0 82px;
+    height:58px;
+    padding:0;
+    overflow:hidden;
+    border-radius:12px;
+    border:2px solid transparent;
+    background:#101927;
+    opacity:.42;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.memory-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.memory-thumb:hover{
+    opacity:.85;
+    transform:translateY(-2px);
+}
+
+.memory-thumb.active{
+    opacity:1;
+    border-color:#ffd166;
+    transform:translateY(-3px);
+    box-shadow:0 5px 20px rgba(255,209,102,.15);
+}
+
+.memory-hint{
+    text-align:center;
+    color:#77859a;
+    font-size:11px;
+    padding-top:8px;
+}
+
+.memory-hint span{
+    color:#ffd166;
+    padding:0 5px;
+}
+
+@media(max-width:600px){
+
+    .memory-stage{
+        aspect-ratio:4/3;
+        min-height:0;
+        border-radius:23px;
+    }
+
+    .memory-stage::after{
+        inset:8px;
+        border-radius:17px;
+    }
+
+    .memory-top{
+        top:13px;
+        left:13px;
+        right:13px;
+    }
+
+    .memory-top span{
+        font-size:8px;
+        padding:6px 8px;
+    }
+
+    .memory-top b{
+        font-size:10px;
+        padding:6px 8px;
+    }
+
+    .memory-arrow{
+        width:40px;
+        height:40px;
+        font-size:25px;
+    }
+
+    .memory-arrow.left{left:9px;}
+    .memory-arrow.right{right:9px;}
+
+    .memory-caption{
+        left:16px;
+        bottom:16px;
+    }
+
+    .memory-thumb{
+        flex-basis:68px;
+        height:49px;
+        border-radius:9px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="nav">
+
+    <div class="logo">
+        School<span>Memories</span> ✨
+    </div>
+
+    
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✨ Teacher's Day 2026
+        </div>
+
+        <h1>
+            Thank You<br>
+            <span class="gradient">Teachers.</span>
+        </h1>
+
+        <p>
+            কিছু মুহূর্ত শুধু ছবি নয়—
+            এগুলো আমাদের school life-এর গল্প।
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#memories" class="btn">
+                📸 Explore Memories
+            </a>
+
+            <a href="#videos" class="btn secondary">
+                🎬 Watch Videos
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        ↓ Scroll to explore
+    </div>
+
+</header>
+
+
+<!-- ================= FEATURE ================= -->
+
+<section class="reveal">
+
+    <div class="feature">
+
+        <div class="feature-content">
+
+            <div class="badge">
+                FEATURED MEMORY
+            </div>
+
+            <h3>
+                The Day We Celebrated Our Teachers ❤️
+            </h3>
+
+            <p>
+                A day filled with smiles, performances,
+                memories and gratitude.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PHOTO GALLERY ================= -->
+
+<section id="memories" class="reveal">
+
+    <div class="section-title">
+        <small>01 — Memories</small>
+        <h2>Photo Gallery 📸</h2>
+        <p>একটা ছবি, একটা মুহূর্ত, একটা গল্প। Swipe করে memories দেখো।</p>
+    </div>
+
+    <div class="memory-gallery">
+
+        <div class="memory-stage" id="memoryStage">
+
+            <div class="memory-glow"></div>
+
+            <img
+                id="memoryMain"
+                src="images/photo1.jpg"
+                alt="School Memory">
+
+            <div class="memory-top">
+                <span>OUR MEMORIES</span>
+            </div>
+
+            <button
+                class="memory-arrow left"
+                id="memoryPrev"
+                aria-label="Previous photo">‹</button>
+
+            <button
+                class="memory-arrow right"
+                id="memoryNext"
+                aria-label="Next photo">›</button>
+
+            <div class="memory-caption">
+                <small id="memoryLabel">MEMORY 01</small>
+                <strong id="memoryTitle">School Memory</strong>
+            </div>
+
+        </div>
+
+        <div class="memory-progress" id="memoryProgress"></div>
+
+        <div class="memory-strip" id="memoryStrip">
+
+            <button class="memory-thumb active" data-index="0">
+                <img src="images/photo1.jpg" alt="Photo 1">
+            </button>
+
+            <button class="memory-thumb" data-index="1">
+                <img src="images/photo2.jpg" alt="Photo 2">
+            </button>
+
+            <button class="memory-thumb" data-index="2">
+                <img src="images/photo3.jpg" alt="Photo 3">
+            </button>
+
+            <button class="memory-thumb" data-index="3">
+                <img src="images/photo4.jpg" alt="Photo 4">
+            </button>
+
+            <button class="memory-thumb" data-index="4">
+                <img src="images/photo5.jpg" alt="Photo 5">
+            </button>
+
+            <button class="memory-thumb" data-index="5">
+                <img src="images/photo6.jpg" alt="Photo 6">
+            </button>
+
+            <button class="memory-thumb" data-index="6">
+                <img src="images/photo7.jpg" alt="Photo 7">
+            </button>
+
+            <button class="memory-thumb" data-index="7">
+                <img src="images/photo8.jpg" alt="Photo 8">
+            </button>
+
+            <button class="memory-thumb" data-index="8">
+                <img src="images/photo9.jpg" alt="Photo 9">
+            </button>
+
+        </div>
+
+        <div class="memory-hint">
+            <span>←</span> Swipe or tap a memory <span>→</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= YOUTUBE VIDEOS ================= -->
+
+<section id="videos" class="reveal">
+
+    <div class="section-title">
+
+        <small>02 — Moments</small>
+
+        <h2>Video Wall 🎬</h2>
+
+        <p>
+            Celebration-এর সবচেয়ে memorable moments।
+        </p>
+
+    </div>
+
+
+    <div class="video-grid">
+
+
+        <!-- VIDEO 1 -->
+
+        <div class="video-card">
+
+            <div class="youtube-player">
+
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1?rel=0"
+                    title="Teacher's Day Performance"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <h3>
+                🎤 Teacher's Day Performance
+            </h3>
+
+        </div>
+
+
+        <!-- VIDEO 2 -->
+
+        <div class="video-card">
+
+            <div class="youtube-player">
+
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2?rel=0"
+                    title="Celebration Moments"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <h3>
+                🎉 Celebration Moments
+            </h3>
+
+        </div>
+
+
+        <!-- VIDEO 3 -->
+
+        <div class="video-card">
+
+            <div class="youtube-player">
+
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/VIDEO_ID_3?rel=0"
+                    title="Special Message"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <h3>
+                ❤️ Special Message
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= TIMELINE ================= -->
+
+<section class="reveal">
+
+    <div class="section-title">
+
+        <small>03 — Story</small>
+
+        <h2>Our Day ⏳</h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="event">
+
+            <h3>🌅 Welcome</h3>
+
+            <p>
+                Teachers and students arrive at school.
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h3>🎤 Cultural Program</h3>
+
+            <p>
+                Students perform special programs
+                for their teachers.
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h3>🎂 Celebration</h3>
+
+            <p>
+                Cake cutting, laughter and unforgettable moments.
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h3>📸 Group Photo</h3>
+
+            <p>
+                One final photo to remember the day.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MESSAGES ================= -->
+
+<section class="reveal">
+
+    <div class="section-title">
+
+        <small>04 — Gratitude</small>
+
+        <h2>Messages For Teachers 💌</h2>
+
+    </div>
+
+
+    <div class="message-grid">
+
+
+        <div class="message">
+
+            <p>
+                “আপনারা শুধু আমাদের পড়ান না,
+                আমাদের ভবিষ্যৎ তৈরি করতে সাহায্য করেন।”
+            </p>
+
+            <span>
+                — Your Students
+            </span>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                “Every lesson, every correction,
+                every little advice matters.”
+            </p>
+
+            <span>
+                — Class XII
+            </span>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                “Thank you for believing in us
+                even when we didn't believe in ourselves.”
+            </p>
+
+            <span>
+                — With Love ❤️
+            </span>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                “Teachers plant the seeds of knowledge
+                that grow forever.”
+            </p>
+
+            <span>
+                — Students
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    Made with ❤️ by the students of
+    <strong>Our School</strong>
+
+    <br><br>
+
+    Teacher's Day 2026 ✨
+
+</footer>
+
+
+<!-- ================= LIGHTBOX ================= -->
+
+<div class="lightbox" id="lightbox">
+
+    <button class="close" onclick="closeLightbox()">
+        ×
+    </button>
+
+    <img id="lightboxImage" src="" alt="Preview">
+
+</div>
+
+
+<!-- ================= AUDIO ================= -->
+
+<audio id="music" loop>
+
+    <source
+        src="music/background.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<script>
+
+
+/* ================= MUSIC ================= */
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+let playing = false;
+
+
+function toggleMusic(){
+
+    if(!playing){
+
+        music.play()
+        .then(()=>{
+
+            playing = true;
+
+            musicBtn.textContent =
+                "🔊 Music";
+
+        })
+        .catch(()=>{
+
+            alert(
+                "Music file পাওয়া যায়নি।"
+            );
+
+        });
+
+    }else{
+
+        music.pause();
+
+        playing = false;
+
+        musicBtn.textContent =
+            "🔇 Music";
+
+    }
+
+}
+
+
+/* ================= LIGHTBOX ================= */
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+
+/* Gallery images open in the existing lightbox */
+function openMemoryLightbox(src){
+
+    lightboxImage.src = src;
+
+    lightbox.classList.add("active");
+
+}
+
+
+function closeLightbox(){
+
+    lightbox.classList.remove(
+        "active"
+    );
+
+}
+
+
+lightbox.addEventListener(
+    "click",
+    (e)=>{
+
+        if(e.target === lightbox){
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+
+
+/* ================= UNIQUE MEMORY GALLERY JS ================= */
+
+const memoryPhotos = [
+    "images/photo1.jpg",
+    "images/photo2.jpg",
+    "images/photo3.jpg",
+    "images/photo4.jpg",
+    "images/photo5.jpg",
+    "images/photo6.jpg",
+    "images/photo7.jpg",
+    "images/photo8.jpg",
+    "images/photo9.jpg"
+];
+
+const memoryTitles = [
+    "School Memory",
+    "Teacher's Day",
+    "School Event",
+    "Our Teachers",
+    "Students",
+    "Celebration",
+    "School Moments",
+    "Forever Memories",
+    "school time"
+];
+
+const memoryMain =
+    document.getElementById("memoryMain");
+const memoryLabel =
+    document.getElementById("memoryLabel");
+
+const memoryTitle =
+    document.getElementById("memoryTitle");
+
+const memoryStage =
+    document.getElementById("memoryStage");
+
+const memoryStrip =
+    document.getElementById("memoryStrip");
+
+const memoryThumbs =
+    document.querySelectorAll(".memory-thumb");
+
+const memoryProgress =
+    document.getElementById("memoryProgress");
+
+let memoryIndex = 0;
+let memoryTimer = null;
+let memoryTouchStart = 0;
+
+
+/* Progress dots */
+
+memoryPhotos.forEach((_, index) => {
+
+    const dot =
+        document.createElement("span");
+
+    dot.addEventListener("click", () => {
+
+        showMemory(index);
+        restartMemoryAuto();
+
+    });
+
+    memoryProgress.appendChild(dot);
+
+});
+
+
+const memoryDots =
+    memoryProgress.querySelectorAll("span");
+
+
+function showMemory(index){
+
+    if(index < 0){
+        index = memoryPhotos.length - 1;
+    }
+
+    if(index >= memoryPhotos.length){
+        index = 0;
+    }
+
+    memoryIndex = index;
+
+    memoryMain.classList.add("changing");
+
+    setTimeout(() => {
+
+        memoryMain.src =
+            memoryPhotos[index];
+
+        memoryMain.classList.remove("changing");
+
+    }, 130);
+
+
+    const number =
+        String(index + 1).padStart(2,"0");
+memoryLabel.textContent =
+        "MEMORY " + number;
+
+    memoryTitle.textContent =
+        memoryTitles[index];
+
+
+    memoryDots.forEach((dot, i) => {
+
+        dot.classList.toggle(
+            "active",
+            i === index
+        );
+
+    });
+
+
+    memoryThumbs.forEach((thumb, i) => {
+
+        thumb.classList.toggle(
+            "active",
+            i === index
+        );
+
+    });
+
+    /* Only scroll the thumbnail strip,
+       never the whole webpage. */
+
+    const activeThumb =
+        memoryThumbs[index];
+
+    if(activeThumb){
+
+        const left =
+            activeThumb.offsetLeft -
+            memoryStrip.clientWidth / 2 +
+            activeThumb.clientWidth / 2;
+
+        memoryStrip.scrollTo({
+            left:Math.max(0,left),
+            behavior:"smooth"
+        });
+
+    }
+
+}
+
+
+function nextMemory(){
+
+    showMemory(memoryIndex + 1);
+
+}
+
+
+function previousMemory(){
+
+    showMemory(memoryIndex - 1);
+
+}
+
+
+document
+.getElementById("memoryNext")
+.addEventListener("click", () => {
+
+    nextMemory();
+    restartMemoryAuto();
+
+});
+
+
+document
+.getElementById("memoryPrev")
+.addEventListener("click", () => {
+
+    previousMemory();
+    restartMemoryAuto();
+
+});
+
+
+memoryThumbs.forEach(thumb => {
+
+    thumb.addEventListener("click", () => {
+
+        showMemory(
+            Number(thumb.dataset.index)
+        );
+
+        restartMemoryAuto();
+
+    });
+
+});
+
+
+/* Auto slide */
+
+function startMemoryAuto(){
+
+    stopMemoryAuto();
+
+    memoryTimer =
+        setInterval(
+            nextMemory,
+            5000
+        );
+
+}
+
+
+function stopMemoryAuto(){
+
+    if(memoryTimer){
+
+        clearInterval(memoryTimer);
+
+        memoryTimer = null;
+
+    }
+
+}
+
+
+function restartMemoryAuto(){
+
+    startMemoryAuto();
+
+}
+
+
+/* Swipe */
+
+memoryStage.addEventListener(
+    "touchstart",
+    event => {
+
+        memoryTouchStart =
+            event.changedTouches[0].screenX;
+
+        stopMemoryAuto();
+
+    },
+    {passive:true}
+);
+
+
+memoryStage.addEventListener(
+    "touchend",
+    event => {
+
+        const end =
+            event.changedTouches[0].screenX;
+
+        const difference =
+            memoryTouchStart - end;
+
+        if(Math.abs(difference) > 45){
+
+            if(difference > 0){
+
+                nextMemory();
+
+            }else{
+
+                previousMemory();
+
+            }
+
+        }
+
+        startMemoryAuto();
+
+    },
+    {passive:true}
+);
+
+
+/* Click main image -> fullscreen lightbox */
+
+memoryMain.addEventListener(
+    "click",
+    () => {
+
+        openMemoryLightbox(
+            memoryPhotos[memoryIndex]
+        );
+
+        stopMemoryAuto();
+
+    }
+);
+
+
+/* Keyboard navigation */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(event.key === "ArrowRight"){
+
+            nextMemory();
+            restartMemoryAuto();
+
+        }
+
+        if(event.key === "ArrowLeft"){
+
+            previousMemory();
+            restartMemoryAuto();
+
+        }
+
+    }
+);
+
+
+/* Initial state */
+
+showMemory(0);
+startMemoryAuto();
+
+
+
+/* ================= SCROLL REVEAL ================= */
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(
+                    entry.isIntersecting
+                ){
+
+                    entry.target.classList.add(
+                        "show"
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(el =>
+    observer.observe(el)
+);
+
+
+/* ================= ESC KEY ================= */
+
+document.addEventListener(
+    "keydown",
+    (e)=>{
+
+        if(e.key === "Escape"){
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
